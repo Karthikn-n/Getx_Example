@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/state_manager.dart';
 import 'package:get_state/controllers/user_controller.dart';
 import 'package:get_state/routes/app_pages.dart';
 
@@ -43,7 +42,7 @@ class Register extends GetView<UserController> {
                 Text("Already registered? "),
                 TextButton(
                   onPressed: (){
-                    Get.offAllNamed(AppRoutes.LOGIN);
+                    Get.offAllNamed(AppRoutes.login);
                   }, 
                   child: Text("login")
                 )

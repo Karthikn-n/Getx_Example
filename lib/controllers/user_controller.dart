@@ -24,7 +24,7 @@ class UserController extends GetxController{
         margin: EdgeInsets.fromLTRB(12, 0, 12, 10),
         duration: const Duration(seconds: 1),
       ));
-      Get.toNamed(AppRoutes.HOME);
+      Get.toNamed(AppRoutes.home);
     } else {
       Get.showSnackbar(
         GetSnackBar(
@@ -32,7 +32,7 @@ class UserController extends GetxController{
         margin: EdgeInsets.fromLTRB(12, 0, 12, 10),
         duration: const Duration(seconds: 1),
       ));
-      Get.offAll(AppRoutes.REGISTER);
+      Get.offAll(AppRoutes.register);
     }
   }
 
@@ -45,7 +45,7 @@ class UserController extends GetxController{
         margin: EdgeInsets.fromLTRB(12, 0, 12, 10),
         duration: const Duration(seconds: 1),
       ));
-      Get.toNamed(AppRoutes.HOME);
+      Get.toNamed(AppRoutes.home);
     } else {
       Get.showSnackbar(
         GetSnackBar(

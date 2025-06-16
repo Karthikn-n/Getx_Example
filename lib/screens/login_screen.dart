@@ -33,7 +33,7 @@ class LoginScreen extends GetView<UserController> {
                 Text("Have an account? "),
                 TextButton(
                   onPressed: (){
-                    Get.offAllNamed(AppRoutes.REGISTER);
+                    Get.offAllNamed(AppRoutes.register);
                   }, 
                   child: Text("Register")
                 )

@@ -10,17 +10,17 @@ class AppPages {
   static final Bindings bindings = AllBindings();
   static final routes = [
     GetPage(
-      name: AppRoutes.REGISTER, 
+      name: AppRoutes.register, 
       page: () => Register(), 
       binding: bindings
     ),
     GetPage(
-      name: AppRoutes.HOME, 
+      name: AppRoutes.home, 
       page: () => HomeScreen(),
       binding: bindings
     ),
     GetPage(
-      name: AppRoutes.LOGIN, 
+      name: AppRoutes.login, 
       page: () => LoginScreen(),
       binding: bindings
     ),
