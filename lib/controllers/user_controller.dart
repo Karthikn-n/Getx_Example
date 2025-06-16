@@ -24,6 +24,7 @@ class UserController extends GetxController{
         margin: EdgeInsets.fromLTRB(12, 0, 12, 10),
         duration: const Duration(seconds: 1),
       ));
+      Get.delete<UserController>();
       Get.toNamed(AppRoutes.home);
     } else {
       Get.showSnackbar(
