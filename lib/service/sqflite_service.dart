@@ -11,7 +11,7 @@ class SqfliteService {
     return _db!;
   }
   
-  static Future<Database?> initDB() async {
+  static Future<Database?> initDB() async {                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
     String path = join(await getDatabasesPath(), 'users.db');
     return openDatabase(
       path,
@@ -76,7 +76,6 @@ class SqfliteService {
       throw "Can't update the user";
     }
   }
-
   Future<bool> deleteUser(int id) async {
     final db = await database;
     try {

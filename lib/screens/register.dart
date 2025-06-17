@@ -12,6 +12,13 @@ class Register extends GetView<UserController> {
       appBar: AppBar(
         title: Text("Register"),
         centerTitle: true,
+        actions: [
+          IconButton(
+            tooltip: "chat with AI",
+            onPressed: () => Get.toNamed(AppRoutes.chat),
+            icon: Icon(Icons.chat)
+          )
+        ],
       ),
       body: Padding(
         padding: EdgeInsetsGeometry.symmetric(horizontal: 12.0),

@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:get_state/bindings/bindings.dart';
+import 'package:get_state/screens/chat_screen.dart';
 import 'package:get_state/screens/home_screen.dart';
 import 'package:get_state/screens/login_screen.dart';
 import 'package:get_state/screens/register.dart';
@@ -22,6 +23,11 @@ class AppPages {
     GetPage(
       name: AppRoutes.login, 
       page: () => LoginScreen(),
+      binding: bindings
+    ),
+    GetPage(
+      name: AppRoutes.chat, 
+      page: () => ChatScreen(),
       binding: bindings
     ),
     
