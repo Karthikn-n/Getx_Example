@@ -2,7 +2,6 @@ import 'package:firebase_ai/firebase_ai.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:get_state/controllers/chat_controller.dart';
 
 class ChatScreen extends StatefulWidget {
@@ -115,18 +114,29 @@ class _ChatScreenState extends State<ChatScreen> with SingleTickerProviderStateM
                         contentPadding: EdgeInsets.all(16.0),  
                         hintText: "Ask anything",
                         border: OutlineInputBorder(borderSide: BorderSide.none),
-                        suffixIcon: IconButton(
-                          onPressed: () async {
-                            final promptText = _controller.text.trim();
-                            if (promptText.isEmpty) return;
-                            controller.sendPrompt([Content.text(promptText)]);
-                            controller.isSent.value = true;
-                            setState(() {
-                              _currentLines = 1;
-                            }); 
-                            _controller.clear();
-                          }, 
-                          icon: Icon(Icons.arrow_circle_up)
+                        suffixIcon: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            IconButton(
+                              onPressed: () {
+                                controller.requestStoragePermission();
+                              },
+                              icon: Icon(CupertinoIcons.pin),
+                            ),
+                            IconButton(
+                              onPressed: () async {
+                                final promptText = _controller.text.trim();
+                                if (promptText.isEmpty) return;
+                                controller.sendPrompt([Content.text(promptText)]);
+                                controller.isSent.value = true;
+                                setState(() {
+                                  _currentLines = 1;
+                                }); 
+                                _controller.clear();
+                              }, 
+                              icon: Icon(Icons.arrow_circle_up)
+                            ),
+                          ],
                         )
                       ),
                     ),
